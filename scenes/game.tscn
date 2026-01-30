@@ -1,15 +1,144 @@
 [gd_scene format=3 uid="uid://0rcaatc5w2hc"]
 
+[ext_resource type="Script" uid="uid://du6stv78tx6kg" path="res://state.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://dh7uuxiql5178" path="res://assets/scripts/breaker1.gd" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://dvvwbufmbuh62" path="res://assets/scripts/breaker_2.gd" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://ds2xdfk6jb8ot" path="res://assets/scripts/breaker_3.gd" id="5_iywne"]
+[ext_resource type="Material" uid="uid://b3a6g3t0rcu4f" path="res://assets/materials/proto_metal.tres" id="6_p57ef"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_yqjtg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lbhrr"]
+albedo_color = Color(0.6295588, 0.015685596, 1.92523e-07, 1)
 
-[node name="Node3D" type="Node3D" unique_id=226592304]
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnu2h"]
+size = Vector3(1.7784805, 0.6298828, 0.7890625)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1502455588]
-transform = Transform3D(5.4599996, 0, 0, 0, 0.16799997, 0, 0, 0, 4.2, 0, 0, 0)
-mesh = SubResource("BoxMesh_yqjtg")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5sy4"]
+albedo_color = Color(0.18468556, 0.46755195, 0.23515564, 1)
 
-[node name="ProtoController" parent="." unique_id=905127928 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+[node name="Node3D" type="Node3D" unique_id=226592304 groups=["player"]]
+
+[node name="GameManager" type="Node" parent="." unique_id=1892699557]
+script = ExtResource("1_lbhrr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=77498403]
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.482963, -0.59503484, 0.64240193, -0.12940954, 0.6770772, 0.7244444, 0, 6, 13)
+shadow_enabled = true
+
+[node name="ProtoController" parent="." unique_id=905127928 groups=["player"] instance=ExtResource("1_uwrxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.028515, -0.546811, 7.4834795)
+collision_layer = 2
 can_sprint = true
+
+[node name="Breaker1" type="CSGBox3D" parent="." unique_id=1609996638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2223983, 1.5406139, 7.3788323)
+use_collision = true
+size = Vector3(0.4560547, 0.17199707, 0.5648804)
+material = SubResource("StandardMaterial3D_lbhrr")
+script = ExtResource("2_yqjtg")
+
+[node name="Label3D" type="Label3D" parent="Breaker1" unique_id=1798836207]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.2876663, 2.1926296, 7.518718)
+top_level = true
+billboard = 1
+text = "Press E to pick up Breaker!"
+
+[node name="Area3D" type="Area3D" parent="Breaker1" unique_id=211351721]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Breaker1/Area3D" unique_id=1760466868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3967557, 0.1850586, 0.012451172)
+shape = SubResource("BoxShape3D_lnu2h")
+debug_color = Color(0, 0.3647059, 0.8509804, 1)
+
+[node name="Breaker2" type="CSGBox3D" parent="." unique_id=1016319128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4490612, 0.17870474, 2.6511254)
+use_collision = true
+size = Vector3(0.4560547, 0.7092285, 0.27819824)
+material = SubResource("StandardMaterial3D_lbhrr")
+script = ExtResource("3_lnu2h")
+
+[node name="Label3D" type="Label3D" parent="Breaker2" unique_id=878898269]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0652678, 0.6520157, 0.13988543)
+billboard = 1
+text = "Press E to pick up Breaker!"
+
+[node name="Area3D" type="Area3D" parent="Breaker2" unique_id=1960210454]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Breaker2/Area3D" unique_id=11732605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11931586, 0, -0.025634766)
+shape = SubResource("BoxShape3D_lnu2h")
+debug_color = Color(0, 0.3647059, 0.8509804, 1)
+
+[node name="Breaker3" type="CSGBox3D" parent="." unique_id=399296405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4490612, 0.17870474, -2.4298635)
+use_collision = true
+size = Vector3(0.4560547, 0.7092285, 0.27819824)
+material = SubResource("StandardMaterial3D_lbhrr")
+script = ExtResource("5_iywne")
+
+[node name="Label3D" type="Label3D" parent="Breaker3" unique_id=1246307076]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0652678, 0.6520157, 0.13988543)
+billboard = 1
+text = "Press E to pick up Breaker!"
+
+[node name="Area3D" type="Area3D" parent="Breaker3" unique_id=1851156146]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Breaker3/Area3D" unique_id=1721962202]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11931586, 0, -0.025634766)
+shape = SubResource("BoxShape3D_lnu2h")
+debug_color = Color(0, 0.3647059, 0.8509804, 1)
+
+[node name="Base" type="CSGBox3D" parent="." unique_id=117879360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7278886, -0.46335018, 1.2637877)
+use_collision = true
+size = Vector3(29.927246, 0.091442384, 26.525513)
+material = SubResource("StandardMaterial3D_u5sy4")
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1055065999]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=518896068]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -103.0
+offset_right = 324.0
+grow_vertical = 0
+text = "Respawn"
+
+[node name="Shelf" type="CSGCombiner3D" parent="." unique_id=2038356652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.307342, 1.0496206, 5.496092)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Shelf" unique_id=1390710928]
+material_override = ExtResource("6_p57ef")
+size = Vector3(1, 2.854004, 0.2758789)
+material = ExtResource("6_p57ef")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Shelf" unique_id=1124109834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3244429)
+size = Vector3(1, 2.854004, 0.2758789)
+material = ExtResource("6_p57ef")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Shelf" unique_id=1256425419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3297119, 1.2249464)
+material_override = ExtResource("6_p57ef")
+size = Vector3(1, 0.19458008, 2.4299316)
+material = ExtResource("6_p57ef")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Shelf" unique_id=1221364457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2925794, 1.2249464)
+material_override = ExtResource("6_p57ef")
+size = Vector3(1, 0.19458008, 2.4299316)
+material = ExtResource("6_p57ef")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Shelf" unique_id=1469469859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.025986, 1.2249464)
+material_override = ExtResource("6_p57ef")
+size = Vector3(1, 0.19458008, 2.4299316)
+material = ExtResource("6_p57ef")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="Breaker1" method="_on_button_pressed"]
