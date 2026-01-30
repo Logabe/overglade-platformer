@@ -1,12 +1,35 @@
-[gd_scene format=3 uid="uid://0rcaatc5w2hc"]
+[gd_scene format=4 uid="uid://0rcaatc5w2hc"]
 
 [ext_resource type="Script" uid="uid://du6stv78tx6kg" path="res://state.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dppsbrrhbgu7k" path="res://scenes/breaker_switch.tscn" id="2_lbhrr"]
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="5_u5sy4"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="6_gee14"]
 [ext_resource type="Material" uid="uid://b3a6g3t0rcu4f" path="res://assets/materials/proto_metal.tres" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://db0td1stm7eap" path="res://scenes/player.tscn" id="6_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="7_0tnpc"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5sy4"]
-albedo_color = Color(0.18468556, 0.46755195, 0.23515564, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtaks"]
+albedo_texture = ExtResource("7_0tnpc")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kvpfn"]
+_surfaces = [{
+"aabb": AABB(-20, -0.5, -20, 40, 1, 40),
+"attribute_data": PackedByteArray("AAAgQQAAgL4AACDBAACAvgAAIMEAAIA+AAAgQQAAgD4AABxBAACAPgAAJMEAAIA+AAAkwQAAgL4AABxBAACAvgAAHEEAACDBAAAcQQAAIEEAACTBAAAgQQAAJMEAACDBAAAcQQAAIMEAACTBAAAgwQAAJMEAACBBAAAcQQAAIEEAABxBAACAvgAAJMEAAIC+AAAkwQAAgD4AABxBAACAPgAAIEEAAIA+AAAgwQAAgD4AACDBAACAvgAAIEEAAIC+"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": SubResource("StandardMaterial3D_vtaks"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AACgQQAAAD8AAKDBAACgwQAAAD8AAKDBAACgwQAAAL8AAKDBAACgQQAAAL8AAKDBAACgwQAAAL8AAKBBAACgwQAAAL8AAKDBAACgwQAAAD8AAKDBAACgwQAAAD8AAKBBAACgwQAAAL8AAKBBAACgQQAAAL8AAKBBAACgQQAAAL8AAKDBAACgwQAAAL8AAKDBAACgwQAAAD8AAKBBAACgwQAAAD8AAKDBAACgQQAAAD8AAKDBAACgQQAAAD8AAKBBAACgQQAAAD8AAKBBAACgQQAAAD8AAKDBAACgQQAAAL8AAKDBAACgQQAAAL8AAKBBAACgQQAAAL8AAKBBAACgwQAAAL8AAKBBAACgwQAAAD8AAKBBAACgQQAAAD8AAKBB/////////z//////////P/////////8//////////z8AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD/f/8//38AAP9//z//fwAA/3//P/9/AAD/f/8//3////9//7//f////3//v/9/////f/+//3////9//7////9//3//P////3//f/8/////f/9//z////9//3//P/9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dinhu"]
+points = PackedVector3Array(20, 0.5, 20, 20, -0.5, 20, -20, 0.5, 20, -20, -0.5, 20, 20, 0.5, -20, 20, -0.5, -20, -20, 0.5, -20, -20, -0.5, -20)
 
 [node name="Node3D" type="Node3D" unique_id=226592304 groups=["player"]]
 
@@ -19,13 +42,6 @@ shadow_enabled = true
 
 [node name="Breaker2" parent="." unique_id=1270264868 instance=ExtResource("2_lbhrr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0938973, 0.2083652, 6.063408)
-
-[node name="Base" type="CSGBox3D" parent="." unique_id=117879360]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7278886, -0.46335018, 1.2637877)
-use_collision = true
-size = Vector3(29.927246, 0.091442384, 26.525513)
-material = SubResource("StandardMaterial3D_u5sy4")
-metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1055065999]
 
@@ -78,3 +94,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1415873, 0.16533291, 7.317
 
 [node name="Breaker4" parent="." unique_id=1432003188 instance=ExtResource("2_lbhrr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.175414, 1.550208, 7.2656817)
+
+[node name="FuncGodotMap" type="Node3D" parent="." unique_id=527166718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8911681, 0)
+script = ExtResource("5_u5sy4")
+global_map_file = "/home/logan/overglade-platformer/maps/test.map"
+map_settings = ExtResource("6_gee14")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=1013311773]
+collision_mask = 0
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=527433546]
+mesh = SubResource("ArrayMesh_kvpfn")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=1501706299]
+shape = SubResource("ConvexPolygonShape3D_dinhu")

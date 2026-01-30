@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	if player_inside and Input.is_action_just_pressed("pickup"):
 		self.hide()
 		self.set_physics_process(false)
-		emit_signal("collect2")
+		emit_signal("collect")
 
 func _player_near(breaker):
 	if breaker == self:
