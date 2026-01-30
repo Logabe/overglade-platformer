@@ -1,15 +1,80 @@
 [gd_scene format=3 uid="uid://0rcaatc5w2hc"]
 
-[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://du6stv78tx6kg" path="res://state.gd" id="1_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dppsbrrhbgu7k" path="res://scenes/breaker_switch.tscn" id="2_lbhrr"]
+[ext_resource type="Material" uid="uid://b3a6g3t0rcu4f" path="res://assets/materials/proto_metal.tres" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://db0td1stm7eap" path="res://scenes/player.tscn" id="6_u5sy4"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_yqjtg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5sy4"]
+albedo_color = Color(0.18468556, 0.46755195, 0.23515564, 1)
 
-[node name="Node3D" type="Node3D" unique_id=226592304]
+[node name="Node3D" type="Node3D" unique_id=226592304 groups=["player"]]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1502455588]
-transform = Transform3D(5.4599996, 0, 0, 0, 0.16799997, 0, 0, 0, 4.2, 0, 0, 0)
-mesh = SubResource("BoxMesh_yqjtg")
+[node name="GameManager" type="Node" parent="." unique_id=1892699557]
+script = ExtResource("1_lbhrr")
 
-[node name="ProtoController" parent="." unique_id=905127928 instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-can_sprint = true
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=77498403]
+transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.482963, -0.59503484, 0.64240193, -0.12940954, 0.6770772, 0.7244444, 0, 6, 13)
+shadow_enabled = true
+
+[node name="Breaker2" parent="." unique_id=1270264868 instance=ExtResource("2_lbhrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0938973, 0.2083652, 6.063408)
+
+[node name="Base" type="CSGBox3D" parent="." unique_id=117879360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7278886, -0.46335018, 1.2637877)
+use_collision = true
+size = Vector3(29.927246, 0.091442384, 26.525513)
+material = SubResource("StandardMaterial3D_u5sy4")
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1055065999]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=518896068]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -103.0
+offset_right = 324.0
+grow_vertical = 0
+text = "Respawn"
+
+[node name="Shelf" type="CSGCombiner3D" parent="." unique_id=2038356652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.307342, 1.0496206, 5.496092)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Shelf" unique_id=1390710928]
+material_override = ExtResource("6_p57ef")
+size = Vector3(1, 2.854004, 0.2758789)
+material = ExtResource("6_p57ef")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Shelf" unique_id=1124109834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3244429)
+size = Vector3(1, 2.854004, 0.2758789)
+material = ExtResource("6_p57ef")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Shelf" unique_id=1256425419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3297119, 1.2249464)
+material_override = ExtResource("6_p57ef")
+size = Vector3(1, 0.19458008, 2.4299316)
+material = ExtResource("6_p57ef")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Shelf" unique_id=1221364457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2925794, 1.2249464)
+material_override = ExtResource("6_p57ef")
+size = Vector3(1, 0.19458008, 2.4299316)
+material = ExtResource("6_p57ef")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Shelf" unique_id=1469469859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.025986, 1.2249464)
+material_override = ExtResource("6_p57ef")
+size = Vector3(1, 0.19458008, 2.4299316)
+material = ExtResource("6_p57ef")
+
+[node name="Player" parent="." unique_id=369094673 groups=["player"] instance=ExtResource("6_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.045763, 0.582371, 6.85559)
+
+[node name="Breaker3" parent="." unique_id=865182327 instance=ExtResource("2_lbhrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1415873, 0.16533291, 7.3172297)
+
+[node name="Breaker4" parent="." unique_id=1432003188 instance=ExtResource("2_lbhrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.175414, 1.550208, 7.2656817)

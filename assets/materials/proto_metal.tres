@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b3a6g3t0rcu4f"]
+
+[ext_resource type="Texture2D" uid="uid://cxapnfoo6ovug" path="res://Metal_Rough_01_basecolor.jpg" id="1_nhaoe"]
+
+[resource]
+albedo_texture = ExtResource("1_nhaoe")
+metallic = 1.0
+metallic_texture_channel = 4
