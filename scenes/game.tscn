@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://0rcaatc5w2hc"]
 
 [ext_resource type="Script" uid="uid://du6stv78tx6kg" path="res://state.gd" id="1_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://dh7uuxiql5178" path="res://assets/scripts/breaker1.gd" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://dvvwbufmbuh62" path="res://assets/scripts/breaker_2.gd" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://ds2xdfk6jb8ot" path="res://assets/scripts/breaker_3.gd" id="5_iywne"]
 [ext_resource type="Material" uid="uid://b3a6g3t0rcu4f" path="res://assets/materials/proto_metal.tres" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://db0td1stm7eap" path="res://scenes/player.tscn" id="6_u5sy4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lbhrr"]
 albedo_color = Color(0.6295588, 0.015685596, 1.92523e-07, 1)
@@ -25,42 +25,39 @@ script = ExtResource("1_lbhrr")
 transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.482963, -0.59503484, 0.64240193, -0.12940954, 0.6770772, 0.7244444, 0, 6, 13)
 shadow_enabled = true
 
-[node name="ProtoController" parent="." unique_id=905127928 groups=["player"] instance=ExtResource("1_uwrxv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.028515, -0.546811, 7.4834795)
-collision_layer = 2
-can_sprint = true
-
-[node name="Breaker1" type="CSGBox3D" parent="." unique_id=1609996638]
+[node name="Breaker1" type="CSGBox3D" parent="." unique_id=1609996638 groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2223983, 1.5406139, 7.3788323)
 use_collision = true
 size = Vector3(0.4560547, 0.17199707, 0.5648804)
 material = SubResource("StandardMaterial3D_lbhrr")
 script = ExtResource("2_yqjtg")
 
-[node name="Label3D" type="Label3D" parent="Breaker1" unique_id=1798836207]
+[node name="Label3D" type="Label3D" parent="Breaker1" unique_id=1798836207 groups=["interactable"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.2876663, 2.1926296, 7.518718)
 top_level = true
 billboard = 1
+no_depth_test = true
 text = "Press E to pick up Breaker!"
 
-[node name="Area3D" type="Area3D" parent="Breaker1" unique_id=211351721]
+[node name="Area3D" type="Area3D" parent="Breaker1" unique_id=211351721 groups=["interactable"]]
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Breaker1/Area3D" unique_id=1760466868]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Breaker1/Area3D" unique_id=1760466868 groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3967557, 0.1850586, 0.012451172)
 shape = SubResource("BoxShape3D_lnu2h")
 debug_color = Color(0, 0.3647059, 0.8509804, 1)
 
-[node name="Breaker2" type="CSGBox3D" parent="." unique_id=1016319128]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4490612, 0.17870474, 2.6511254)
+[node name="Breaker2" type="CSGBox3D" parent="." unique_id=1016319128 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0938973, 0.2083652, 6.063408)
 use_collision = true
-size = Vector3(0.4560547, 0.7092285, 0.27819824)
+size = Vector3(0.456, 0.172, 0.565)
 material = SubResource("StandardMaterial3D_lbhrr")
 script = ExtResource("3_lnu2h")
 
 [node name="Label3D" type="Label3D" parent="Breaker2" unique_id=878898269]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0652678, 0.6520157, 0.13988543)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.06526804, 0.6520157, 0.13988543)
 billboard = 1
+no_depth_test = true
 text = "Press E to pick up Breaker!"
 
 [node name="Area3D" type="Area3D" parent="Breaker2" unique_id=1960210454]
@@ -71,16 +68,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11931586, 0, -0.025634766)
 shape = SubResource("BoxShape3D_lnu2h")
 debug_color = Color(0, 0.3647059, 0.8509804, 1)
 
-[node name="Breaker3" type="CSGBox3D" parent="." unique_id=399296405]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4490612, 0.17870474, -2.4298635)
+[node name="Breaker3" type="CSGBox3D" parent="." unique_id=399296405 groups=["interactable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4670796, 0.17870474, 7.291199)
 use_collision = true
-size = Vector3(0.4560547, 0.7092285, 0.27819824)
+size = Vector3(0.456, 0.172, 0.565)
 material = SubResource("StandardMaterial3D_lbhrr")
 script = ExtResource("5_iywne")
 
 [node name="Label3D" type="Label3D" parent="Breaker3" unique_id=1246307076]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.0652678, 0.6520157, 0.13988543)
 billboard = 1
+no_depth_test = true
 text = "Press E to pick up Breaker!"
 
 [node name="Area3D" type="Area3D" parent="Breaker3" unique_id=1851156146]
@@ -140,5 +138,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.025986, 1.2249464)
 material_override = ExtResource("6_p57ef")
 size = Vector3(1, 0.19458008, 2.4299316)
 material = ExtResource("6_p57ef")
+
+[node name="Player" parent="." unique_id=369094673 groups=["player"] instance=ExtResource("6_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.045763, 0.582371, 6.85559)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="Breaker1" method="_on_button_pressed"]
