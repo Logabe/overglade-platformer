@@ -14,21 +14,21 @@ func _ready() -> void:
 	label_3d.hide()
 
 
-signal collect1()
+signal collect()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player_inside and Input.is_action_just_pressed("pickup"):
 		self.hide()
 		self.set_physics_process(false)
-		emit_signal("collect1")
+		emit_signal("collect2")
 
-func _player_near(breaker_index):
-	if breaker_index == 1:
+func _player_near(breaker):
+	if breaker == self:
 		label_3d.show()
 		player_inside = true
 
-func _player_left(breaker_index):
-	if breaker_index == 1:
+func _player_left(breaker):
+	if breaker == self:
 		label_3d.hide()
 		player_inside = false
 func _on_button_pressed() -> void:

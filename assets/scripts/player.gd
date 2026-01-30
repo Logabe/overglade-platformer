@@ -47,25 +47,19 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-signal player_near(breaker_index)
-signal player_left(breaker_index)
-var last_near_breaker := 0
+signal player_near(breaker)
+signal player_left(breaker)
+var last_near_breaker
 func _process(delta: float) -> void:
-	var new_near_breaker := 0
+	var new_near_breaker
 	if ray_cast_3d.is_colliding():
 		var obj = ray_cast_3d.get_collider()
 		if obj.is_in_group("interactable"):
-			if obj.name == "Breaker1":
-				emit_signal("player_near", 1)
-				new_near_breaker = 1
-			if obj.name == "Breaker2":
-				emit_signal("player_near", 2)
-				new_near_breaker = 2
-			if obj.name == "Breaker3":
-				emit_signal("player_near", 3)
-				new_near_breaker = 3
-	if new_near_breaker != 0 and last_near_breaker == 0:
+			emit_signal("player_near", obj)
+			new_near_breaker = obj
+		
+	if new_near_breaker and !last_near_breaker:
 		emit_signal("player_near", new_near_breaker)
-	if new_near_breaker == 0 and last_near_breaker != 0:
+	if !new_near_breaker and last_near_breaker:
 		emit_signal("player_left", last_near_breaker)
 	last_near_breaker = new_near_breaker
