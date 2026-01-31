@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dlgyyf4gif1e7"]
+
+[ext_resource type="Script" uid="uid://7a7axikis7cl" path="res://assets/scripts/dialog.gd" id="1_36pgd"]
+[ext_resource type="StyleBox" path="res://assets/models/Dialog.tres" id="2_tmfn4"]
+
+[node name="Dialog" type="Node" unique_id=875051722]
+script = ExtResource("1_36pgd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1243510139]
+unique_name_in_owner = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=867304530]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer" unique_id=1232265873]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_tmfn4")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer" unique_id=1732259148]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer" unique_id=1532526303]
+unique_name_in_owner = true
+layout_mode = 2
+text = "test"

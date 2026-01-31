@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://du6stv78tx6kg" path="res://state.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dppsbrrhbgu7k" path="res://scenes/breaker_switch.tscn" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dlgyyf4gif1e7" path="res://scenes/dialog.tscn" id="4_gee14"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="5_u5sy4"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="6_gee14"]
 [ext_resource type="PackedScene" uid="uid://db0td1stm7eap" path="res://scenes/player.tscn" id="6_u5sy4"]
@@ -191,6 +192,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7795835, 0.5790405, 7.3172
 
 [node name="Breaker4" parent="." unique_id=1432003188 instance=ExtResource("2_lbhrr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.942479, 1.4498204, 7.2656817)
+
+[node name="Dialog" parent="." unique_id=875051722 instance=ExtResource("4_gee14")]
 
 [node name="FuncGodotMap" type="Node3D" parent="." unique_id=527166718]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8911681, 0)
