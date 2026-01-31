@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dlgyyf4gif1e7"]
 
 [ext_resource type="Script" uid="uid://7a7axikis7cl" path="res://assets/scripts/dialog.gd" id="1_36pgd"]
-[ext_resource type="StyleBox" path="res://assets/models/Dialog.tres" id="2_tmfn4"]
+[ext_resource type="StyleBox" uid="uid://wpary6hpnqa" path="res://assets/models/Dialog.tres" id="2_tmfn4"]
 
 [node name="Dialog" type="Node" unique_id=875051722]
 script = ExtResource("1_36pgd")
