@@ -9,9 +9,13 @@ const SENSITIVITY = 0.003
 @onready var camera_3d: Camera3D = $Head/Camera3D
 @onready var ray_cast_3d: RayCast3D = $Head/Camera3D/RayCast3D
 var mouse_captured := false
+@onready var progress_bar: ProgressBar = $CanvasLayer/ProgressBar
+@onready var spot_light_3d: SpotLight3D = $Head/Camera3D/SpotLight3D
+var flash_on := false
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	mouse_captured = true
+	spot_light_3d.hide()
 	
 func _unhandled_input(event) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -25,7 +29,13 @@ func _unhandled_input(event) -> void:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera_3d.rotate_x(-event.relative.y * SENSITIVITY)
 		camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-80), deg_to_rad(80))
-
+	if event.is_action_pressed("flashlight"):
+		if flash_on:
+			spot_light_3d.hide()
+			flash_on = false
+		elif !flash_on or flash_on == false:
+			spot_light_3d.show()
+			flash_on = true
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -57,9 +67,13 @@ func _process(delta: float) -> void:
 		if obj.is_in_group("interactable"):
 			emit_signal("player_near", obj)
 			new_near_breaker = obj
-		
 	if new_near_breaker and !last_near_breaker:
 		emit_signal("player_near", new_near_breaker)
 	if !new_near_breaker and last_near_breaker:
 		emit_signal("player_left", last_near_breaker)
 	last_near_breaker = new_near_breaker
+	
+	if flash_on:
+		progress_bar.value -= delta * 10
+	if !flash_on:
+		progress_bar.value += delta/2
