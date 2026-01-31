@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dppsbrrhbgu7k"]
 
-[ext_resource type="Script" uid="uid://dvvwbufmbuh62" path="res://assets/scripts/breaker.gd" id="1_eh2ec"]
+[ext_resource type="Script" uid="uid://ioqxrdt0eqxa" path="res://assets/scripts/breaker.gd" id="1_eh2ec"]
 [ext_resource type="ArrayMesh" uid="uid://bv65pr8lj4gfy" path="res://assets/models/breaker.obj" id="2_n18w5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lbhrr"]

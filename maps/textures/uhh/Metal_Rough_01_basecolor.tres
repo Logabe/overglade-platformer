@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://hj0rv4oy0tf3"]
+
+[ext_resource type="Texture2D" uid="uid://hxjq8it8ti1r" path="res://maps/textures/uhh/Metal_Rough_01_basecolor.jpg" id="1_ec0xj"]
+
+[resource]
+albedo_texture = ExtResource("1_ec0xj")
+metallic_specular = 0.0
+texture_filter = 2

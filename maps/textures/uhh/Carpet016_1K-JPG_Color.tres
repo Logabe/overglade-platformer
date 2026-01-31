@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bymxenn50rpwm"]
+
+[ext_resource type="Texture2D" uid="uid://d16x0dp8xj11r" path="res://maps/textures/uhh/Carpet016_1K-JPG_Color.jpg" id="1_o10q1"]
+
+[resource]
+albedo_texture = ExtResource("1_o10q1")
+metallic_specular = 0.0
+texture_filter = 2

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bb8h2be5idc8x"]
+
+[ext_resource type="Texture2D" uid="uid://bpdnip6ql5axd" path="res://maps/textures/uhh/WoodFloor067B_1K-JPG_Color.jpg" id="1_3wx8f"]
+
+[resource]
+albedo_texture = ExtResource("1_3wx8f")
+metallic_specular = 0.0
+texture_filter = 2
