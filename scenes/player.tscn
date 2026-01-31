@@ -3,7 +3,11 @@
 [ext_resource type="Script" uid="uid://bcjtg14iin04l" path="res://assets/scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://iwlpamd20oko" path="res://addons/customizableCrosshair/crosshair/crosshair.tscn" id="2_g2els"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://blp2gvb1d64hj" path="res://assets/scripts/progress_bar.gd" id="3_qhqgy"]
+=======
+[ext_resource type="PackedScene" uid="uid://dlgyyf4gif1e7" path="res://scenes/dialog.tscn" id="3_qhqgy"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="PackedScene" uid="uid://dlgyyf4gif1e7" path="res://scenes/dialog.tscn" id="3_qhqgy"]
 >>>>>>> Stashed changes
@@ -49,6 +53,7 @@ crosshairSize = 10.0
 crosshairColor = Color(0.9763437, 0.07087935, 0.25851765, 1)
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=403659571]
 offset_left = 1.0
 offset_top = 429.0
@@ -59,6 +64,9 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_g2els")
 value = 100.0
 show_percentage = false
 script = ExtResource("3_qhqgy")
+=======
+[node name="Dialog" parent="." unique_id=875051722 instance=ExtResource("3_qhqgy")]
+>>>>>>> Stashed changes
 =======
 [node name="Dialog" parent="." unique_id=875051722 instance=ExtResource("3_qhqgy")]
 >>>>>>> Stashed changes
