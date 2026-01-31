@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://df8wj616kcmyy"
+path="res://.godot/imported/hotel.map-24c0586b4a665950cfcb3c84f6756bba.tres"
+
+[deps]
+
+source_file="res://maps/hotel.map"
+dest_files=["res://.godot/imported/hotel.map-24c0586b4a665950cfcb3c84f6756bba.tres"]
+
+[params]
+
