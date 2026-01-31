@@ -7,7 +7,9 @@ func _ready() -> void:
 		switch.connect("collect", Callable(self, "_increase"))
 	get_tree().get_nodes_in_group("interactable")
 
-
+signal full()
 func _increase() -> void:
 	breakers += 1
 	print(breakers)
+	if breakers >= 8:
+		emit_signal("full")

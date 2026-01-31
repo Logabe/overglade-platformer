@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ij0cvyxufnom"]
+
+[ext_resource type="Script" uid="uid://bs0gnu6yb8s6u" path="res://assets/scripts/light.gd" id="1_ky1i4"]
+[ext_resource type="ArrayMesh" uid="uid://daphkuf24njtj" path="res://assets/models/light.obj" id="2_gr6e6"]
+[ext_resource type="ArrayMesh" uid="uid://ldct8en8gc3" path="res://assets/models/lighton.obj" id="3_oaxgo"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0yxxj"]
+points = PackedVector3Array(0.19999999, 2.2924633, -2.0284214, 1.0039682, 2.1278136, 0.017796636, 1.0039682, 1.9817783, 0.017796636, -0.018253922, 2.1278136, 0.017796636, -0.018253922, 1.9817783, -2.318254, 1.0039682, 1.9817783, -2.318254, 0.79999995, 2.299653, -0.22848924, 0.79999995, 2.299653, -2.0715404, -0.018253922, 1.9817783, 0.017796636, 0.19999999, 2.2924633, -0.27162832, -0.018253922, 2.1278136, -2.318254, 1.0039682, 2.1278136, -2.318254)
+
+[node name="Light" type="StaticBody3D" unique_id=1304033445]
+script = ExtResource("1_ky1i4")
+
+[node name="Light" type="MeshInstance3D" parent="." unique_id=224207442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4956087, -2.1057584, 0.86949086)
+mesh = ExtResource("2_gr6e6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=231766663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4956087, -2.1057584, 0.86949086)
+shape = SubResource("ConvexPolygonShape3D_0yxxj")
+
+[node name="Light2" type="MeshInstance3D" parent="." unique_id=95416274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4956087, -2.1057584, 0.86949086)
+mesh = ExtResource("3_oaxgo")
+
+[node name="DirectionalLight3D" type="OmniLight3D" parent="." unique_id=257381391]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.27445734, -0.25020266)
+omni_range = 11.758
+
+[node name="DirectionalLight3D2" type="OmniLight3D" parent="." unique_id=776265735]
+transform = Transform3D(1, 0, 0, 0, 0.3678811, -0.9298728, 0, 0.9298728, 0.3678811, 0, 0.27445734, -0.25020266)
+light_size = 0.416
+omni_range = 11.758
+
+[node name="DirectionalLight3D3" type="OmniLight3D" parent="." unique_id=1789761816]
+transform = Transform3D(1, 0, 0, 0, -0.25019416, -0.9681958, 0, 0.9681958, -0.25019416, 0, 0.27445734, -0.25020266)
+light_size = 0.416
+omni_range = 11.758
+
+[node name="DirectionalLight3D4" type="OmniLight3D" parent="." unique_id=452246210]
+transform = Transform3D(0.9320395, 0.024330307, -0.36153892, -0.36235678, 0.062581465, -0.9299363, 0, 0.9977434, 0.06714465, 0, 0.27445734, -0.25020266)
+light_size = 0.416
+omni_range = 11.758
+
+[node name="DirectionalLight3D5" type="OmniLight3D" parent="." unique_id=1869410713]
+transform = Transform3D(0.95487505, -0.01994251, 0.29633805, 0.29700807, 0.06411473, -0.9527199, -2.3135933e-09, 0.99774325, 0.067144625, 0, 0.27445734, -0.25020266)
+light_size = 0.416
+omni_range = 11.758
+
+[node name="DirectionalLight3D6" type="OmniLight3D" parent="." unique_id=1363880319]
+transform = Transform3D(-0.9774049, 0.014192744, -0.21089876, -0.21137571, -0.06562754, 0.9751992, -4.9607647e-09, 0.99774325, 0.06714464, 0, 0.27445734, -0.25020266)
+light_size = 0.416
+omni_range = 11.758

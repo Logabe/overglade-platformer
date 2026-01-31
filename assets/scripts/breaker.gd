@@ -13,14 +13,18 @@ func _ready() -> void:
 	player.connect("player_left", Callable(self, "_player_left"))
 	label_3d.hide()
 
-
+var collect_emitted := false
 signal collect()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player_inside and Input.is_action_just_pressed("pickup"):
 		self.hide()
 		self.set_physics_process(false)
-		emit_signal("collect")
+		if collect_emitted:
+			pass
+		if !collect_emitted:
+			emit_signal("collect")
+			collect_emitted = true
 
 func _player_near(breaker):
 	if breaker == self:
