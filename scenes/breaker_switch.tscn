@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dppsbrrhbgu7k"]
+
+[ext_resource type="ArrayMesh" uid="uid://bv65pr8lj4gfy" path="res://assets/models/breaker.obj" id="1_eh2ec"]
+[ext_resource type="Script" uid="uid://dvvwbufmbuh62" path="res://assets/scripts/breaker.gd" id="2_n18w5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnu2h"]
+size = Vector3(2.3478646, 0.6298828, 1.0372314)
+
+[node name="Breaker" type="MeshInstance3D" unique_id=992142217]
+mesh = ExtResource("1_eh2ec")
+script = ExtResource("2_n18w5")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1614286372]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.21344066, 2.4960985, -0.33702695)
+billboard = 1
+no_depth_test = true
+text = "Press E to pick up Breaker!"
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1410715743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39051116, 2.1919944, -0.2932217)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=959220796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08420801, -0.0626452, 0.019836426)
+shape = SubResource("BoxShape3D_lnu2h")
+debug_color = Color(0, 0.3647059, 0.8509804, 1)

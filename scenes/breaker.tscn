@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c1t1rc5hqhjuc"]
+
+[ext_resource type="ArrayMesh" uid="uid://bv65pr8lj4gfy" path="res://assets/models/breaker.obj" id="1_u0uc8"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e4yoe"]
+points = PackedVector3Array(0.0071146996, 2, -0.69292426, 0.6928945, 2.3, -0.007076267, 0.69289505, 2, -0.0070757223, 0.0071146996, 2, -0.0070757223, 0.69289505, 2, -0.69292426, 0.007115245, 2.3, -0.6929237, 0.007115245, 2.3, -0.007076267, 0.6928945, 2.3, -0.6929237)
+
+[node name="Breaker" type="StaticBody3D" unique_id=1942657369]
+
+[node name="Breaker" type="MeshInstance3D" parent="." unique_id=538784644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0848007, -2.824625, -1.4370172)
+mesh = ExtResource("1_u0uc8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=813996047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0848007, -2.824625, -1.4370172)
+shape = SubResource("ConvexPolygonShape3D_e4yoe")

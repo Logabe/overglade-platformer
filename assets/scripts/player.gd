@@ -54,6 +54,7 @@ func _process(delta: float) -> void:
 	var new_near_breaker := 0
 	if ray_cast_3d.is_colliding():
 		var obj = ray_cast_3d.get_collider()
+<<<<<<< Updated upstream
 		if obj.is_in_group("interactable"):
 			if obj.name == "Breaker1":
 				emit_signal("player_near", 1)
@@ -67,5 +68,14 @@ func _process(delta: float) -> void:
 	if new_near_breaker != 0 and last_near_breaker == 0:
 		emit_signal("player_near", new_near_breaker)
 	if new_near_breaker == 0 and last_near_breaker != 0:
+=======
+		if obj and obj is StaticBody3D or obj is MeshInstance3D:
+			emit_signal("player_near", obj)
+			new_near_breaker = obj
+	if new_near_breaker and !last_near_breaker:
+		emit_signal("player_near", new_near_breaker)
+		print("iame")
+	if !new_near_breaker and last_near_breaker:
+>>>>>>> Stashed changes
 		emit_signal("player_left", last_near_breaker)
 	last_near_breaker = new_near_breaker
