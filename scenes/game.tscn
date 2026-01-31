@@ -337,5 +337,6 @@ shape = SubResource("ConvexPolygonShape3D_i4re6")
 [node name="entity_0_brush_43_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=1751042589]
 shape = SubResource("ConvexPolygonShape3D_pf7vy")
 
-[node name="Shelf" parent="FuncGodotMap/entity_0_worldspawn" unique_id=300168220 instance=ExtResource("7_u5sy4")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.732778, 1.1665835, 8.648052)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1824567026]
+environment = SubResource("Environment_kvpfn")
