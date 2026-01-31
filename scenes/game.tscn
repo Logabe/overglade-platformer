@@ -282,7 +282,7 @@ grow_vertical = 0
 text = "Respawn"
 
 [node name="Player" parent="." unique_id=369094673 groups=["player"] instance=ExtResource("6_u5sy4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.715928, 0.582371, 0.031696796)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.715928, 0.582371, 0.031696796)
 
 [node name="Breaker3" parent="." unique_id=865182327 instance=ExtResource("2_lbhrr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7795835, 0.5790405, 7.3172297)
