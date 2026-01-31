@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dppsbrrhbgu7k" path="res://scenes/breaker_switch.tscn" id="2_lbhrr"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="5_u5sy4"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="6_gee14"]
-[ext_resource type="Material" uid="uid://b3a6g3t0rcu4f" path="res://assets/materials/proto_metal.tres" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://db0td1stm7eap" path="res://scenes/player.tscn" id="6_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="7_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://3rl1pfw5kp4x" path="res://scenes/shelf.tscn" id="7_u5sy4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5sy4"]
 albedo_texture = ExtResource("7_0tnpc")
@@ -170,7 +170,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.482963, -0.595034
 shadow_enabled = true
 
 [node name="Breaker2" parent="." unique_id=1270264868 instance=ExtResource("2_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0938973, 0.2083652, 6.063408)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.885872, 0.60563433, 6.063408)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1055065999]
 
@@ -183,46 +183,14 @@ offset_right = 324.0
 grow_vertical = 0
 text = "Respawn"
 
-[node name="Shelf" type="CSGCombiner3D" parent="." unique_id=2038356652]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.307342, 1.0496206, 5.496092)
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Shelf" unique_id=1390710928]
-material_override = ExtResource("6_p57ef")
-size = Vector3(1, 2.854004, 0.2758789)
-material = ExtResource("6_p57ef")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Shelf" unique_id=1124109834]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3244429)
-size = Vector3(1, 2.854004, 0.2758789)
-material = ExtResource("6_p57ef")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Shelf" unique_id=1256425419]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3297119, 1.2249464)
-material_override = ExtResource("6_p57ef")
-size = Vector3(1, 0.19458008, 2.4299316)
-material = ExtResource("6_p57ef")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Shelf" unique_id=1221364457]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2925794, 1.2249464)
-material_override = ExtResource("6_p57ef")
-size = Vector3(1, 0.19458008, 2.4299316)
-material = ExtResource("6_p57ef")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Shelf" unique_id=1469469859]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.025986, 1.2249464)
-material_override = ExtResource("6_p57ef")
-size = Vector3(1, 0.19458008, 2.4299316)
-material = ExtResource("6_p57ef")
-
 [node name="Player" parent="." unique_id=369094673 groups=["player"] instance=ExtResource("6_u5sy4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.045763, 0.582371, 6.85559)
 
 [node name="Breaker3" parent="." unique_id=865182327 instance=ExtResource("2_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1415873, 0.16533291, 7.3172297)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7795835, 0.5790405, 7.3172297)
 
 [node name="Breaker4" parent="." unique_id=1432003188 instance=ExtResource("2_lbhrr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.175414, 1.550208, 7.2656817)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.942479, 1.4498204, 7.2656817)
 
 [node name="FuncGodotMap" type="Node3D" parent="." unique_id=527166718]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8911681, 0)
@@ -368,3 +336,6 @@ shape = SubResource("ConvexPolygonShape3D_i4re6")
 
 [node name="entity_0_brush_43_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=1751042589]
 shape = SubResource("ConvexPolygonShape3D_pf7vy")
+
+[node name="Shelf" parent="FuncGodotMap/entity_0_worldspawn" unique_id=300168220 instance=ExtResource("7_u5sy4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.732778, 1.1665835, 8.648052)
