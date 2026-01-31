@@ -270,17 +270,6 @@ script = ExtResource("1_lbhrr")
 transform = Transform3D(-0.46031597, -0.7969637, -0.39109853, 0.4831257, -0.594486, 0.6427875, -0.744781, 0.10693562, 0.65868497, 0, 6, 13)
 shadow_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1055065999]
-
-[node name="Button" type="Button" parent="CanvasLayer" unique_id=518896068]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -103.0
-offset_right = 324.0
-grow_vertical = 0
-text = "Respawn"
-
 [node name="Player" parent="." unique_id=369094673 groups=["player"] instance=ExtResource("6_u5sy4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.715928, 0.582371, 0.031696796)
 
