@@ -21,3 +21,4 @@ func _turn_on() -> void:
 	directional_light_3d.show()
 	light_2.show()
 	light.hide()
+	$AudioStreamPlayer3D.play()

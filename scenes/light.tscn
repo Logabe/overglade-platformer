@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bs0gnu6yb8s6u" path="res://assets/scripts/light.gd" id="1_ky1i4"]
 [ext_resource type="ArrayMesh" uid="uid://daphkuf24njtj" path="res://assets/models/light.obj" id="2_gr6e6"]
 [ext_resource type="ArrayMesh" uid="uid://ldct8en8gc3" path="res://assets/models/lighton.obj" id="3_oaxgo"]
+[ext_resource type="AudioStream" uid="uid://cpe3suw1x2o38" path="res://assets/sfx/lamp.wav" id="4_gr6e6"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0yxxj"]
 points = PackedVector3Array(0.19999999, 2.2924633, -2.0284214, 1.0039682, 2.1278136, 0.017796636, 1.0039682, 1.9817783, 0.017796636, -0.018253922, 2.1278136, 0.017796636, -0.018253922, 1.9817783, -2.318254, 1.0039682, 1.9817783, -2.318254, 0.79999995, 2.299653, -0.22848924, 0.79999995, 2.299653, -2.0715404, -0.018253922, 1.9817783, 0.017796636, 0.19999999, 2.2924633, -0.27162832, -0.018253922, 2.1278136, -2.318254, 1.0039682, 2.1278136, -2.318254)
@@ -28,3 +29,7 @@ light_color = Color(1, 1, 0.85490197, 1)
 light_energy = 3.0
 shadow_enabled = true
 omni_range = 11.758
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1245455714]
+stream = ExtResource("4_gr6e6")
+max_distance = 10.0
