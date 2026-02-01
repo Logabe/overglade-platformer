@@ -11,6 +11,7 @@
 [ext_resource type="Shader" uid="uid://c3d638behmwd8" path="res://assets/shaders/water.gdshader" id="9_8c41q"]
 [ext_resource type="PackedScene" uid="uid://bewqimlaearh8" path="res://scenes/fishing_rod_trigger.tscn" id="10_olg7q"]
 [ext_resource type="PackedScene" uid="uid://b2jnf3yksrkku" path="res://scenes/fishing_mini_game.tscn" id="10_t1rx8"]
+[ext_resource type="PackedScene" uid="uid://cywbdbjjjrdru" path="res://scenes/bigdoor.tscn" id="12_8iemx"]
 
 [sub_resource type="Environment" id="Environment_kvpfn"]
 background_energy_multiplier = 0.5
@@ -246,3 +247,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.484419, 0, -2.2098923)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1322713839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12817383, 0.6400757, 0.47253418)
 shape = SubResource("BoxShape3D_8c41q")
+
+[node name="Area3D2" parent="." unique_id=477143965 instance=ExtResource("12_8iemx")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.7286386, 0.8588319, -6.8881254)
+
+[node name="Area3D3" parent="." unique_id=1094351596 instance=ExtResource("12_8iemx")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.206, 0.859, -7)

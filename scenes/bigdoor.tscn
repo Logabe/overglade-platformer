@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cywbdbjjjrdru"]
+
+[ext_resource type="Script" uid="uid://blwq611302j56" path="res://scenes/bigdoor.gd" id="1_e4prk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvdjg"]
+size = Vector3(1.5, 2.5, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vjsc0"]
+size = Vector3(1.5, 2.5, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hpvv5"]
+size = Vector3(3.5, 2.5, 1)
+
+[node name="Area3D" type="Area3D" unique_id=1351011796]
+collision_mask = 2
+script = ExtResource("1_e4prk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1530022061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1265528431]
+shape = SubResource("BoxShape3D_uvdjg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=410466532]
+mesh = SubResource("BoxMesh_vjsc0")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=883332520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1999125418]
+shape = SubResource("BoxShape3D_uvdjg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=776559749]
+mesh = SubResource("BoxMesh_vjsc0")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=564420057]
+shape = SubResource("BoxShape3D_hpvv5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
