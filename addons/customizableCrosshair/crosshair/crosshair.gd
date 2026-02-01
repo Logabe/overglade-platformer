@@ -64,7 +64,10 @@ extends CenterContainer
 var crosshairDynamicOffset: float
 # Used as a constant offset on the crosshair lines
 var crosshairStaticOffset: float
-
+#window height
+#var window_height_y := 0
+#scale factor size
+#var scale_crosshair: float
 # A dictionary that holds all the config values for the crosshair
 # I recommend not directly changing the values as it could cause issues
 # Use the getCrosshairSettings function instead
@@ -76,7 +79,11 @@ func _ready() -> void:
 	# Runs only if @tool is uncommented
 	if Engine.is_editor_hint():
 		connect("hidden", update_crosshair)
-
+	var window_height_y = get_viewport().get_visible_rect().size.y
+	if window_height_y < 648:
+		print (window_height_y)
+		var scale_crosshair = window_height_y / 648
+		scale = Vector2(scale_crosshair, scale_crosshair)
 
 # Checks if the received dictionary matches the crosshairConfig dictionary
 func valid_config(config: Dictionary) -> bool:

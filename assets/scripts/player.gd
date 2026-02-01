@@ -60,7 +60,7 @@ func _physics_process(delta: float) -> void:
 signal player_near(breaker)
 signal player_left(breaker)
 var last_near_breaker
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	var new_near_breaker
 	if ray_cast_3d.is_colliding():
 		var obj = ray_cast_3d.get_collider()

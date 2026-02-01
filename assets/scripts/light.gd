@@ -21,7 +21,7 @@ func _ready() -> void:
 	directional_light_3d_6.hide()
 	light_2.hide()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
