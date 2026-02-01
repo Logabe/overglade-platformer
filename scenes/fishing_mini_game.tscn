@@ -12,11 +12,7 @@ script = ExtResource("1_vo17g")
 
 [node name="Control" type="Control" parent="." unique_id=561419624]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=1664895678]
 texture = ExtResource("2_1l4pg")

@@ -88,7 +88,7 @@ func move_fish(delta):
 func check_input():
 	if Input.is_action_just_pressed("ui_accept"):
 		var distance = fish_icon.global_position.distance_to(target_circle.global_position)
-		if distance <= success_margin:
+		if distance >= success_margin: # tru=ied reverse
 			end_minigame(true)
 		else:
 			end_minigame(false)
