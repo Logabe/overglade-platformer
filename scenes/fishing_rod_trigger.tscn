@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bewqimlaearh8"]
 
-[ext_resource type="Script" path="res://assets/scripts/fishing_rod_trigger.gd" id="1_sdqxq"]
+[ext_resource type="Script" uid="uid://b8215c1ko0vi7" path="res://assets/scripts/fishing_rod_trigger.gd" id="1_sdqxq"]
 [ext_resource type="PackedScene" uid="uid://iuokhfguofxe" path="res://models/fishing_rod.glb" id="2_6rstq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sdqxq"]

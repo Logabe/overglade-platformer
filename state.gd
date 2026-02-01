@@ -1,6 +1,6 @@
 extends Node
 
-var breakers := 0
+var breakers := 7
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for switch in get_tree().get_nodes_in_group("interactable"):
