@@ -4,6 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://wpary6hpnqa" path="res://assets/models/Dialog.tres" id="2_tmfn4"]
 
 [node name="Dialog" type="Node" unique_id=875051722]
+process_physics_priority = 3
 script = ExtResource("1_36pgd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1243510139]

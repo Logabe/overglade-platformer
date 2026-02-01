@@ -12,6 +12,8 @@ var is_active: bool = false
 var is_ending: bool = false # Prevents logic overlap during "Catch/Loss" screens
 var direction_to_target: Vector2 = Vector2.ZERO
 var finished: bool = false
+var first_enter := 0
+var enter := 0
 
 @onready var trigger_node = get_node_or_null(trigger_node_path)
 @onready var ui_container = $Control
@@ -25,15 +27,21 @@ func _ready():
 	reset_minigame()
 
 func _process(delta):
+	enter = trigger_node.entered
 	# Check if the external trigger wants to start fishing
 	if trigger_node and trigger_node.get("fishing_state") == 1:
 		if not is_active and not is_ending:
 			start_minigame()
-		
+	
 		# FIXED: These must be indented to stay inside the 'if is_active' block
 		if is_active:
 			move_fish(delta)
 			check_input()
+	if enter == 1 and first_enter == 0:
+		status_label.text = "Press space to fish!"
+		first_enter = 1
+	if enter == 0 and first_enter == 1:
+		first_enter = 0
 
 func setup_anchors():
 	ui_container.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)

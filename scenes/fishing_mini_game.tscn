@@ -5,6 +5,8 @@
 
 [node name="Fishing_MiniGame" type="CanvasLayer" unique_id=1365578047]
 visible = false
+scale = Vector2(0.1, 0.1)
+transform = Transform2D(0.1, 0, 0, 0.1, 0, 0)
 script = ExtResource("1_vo17g")
 
 [node name="Control" type="Control" parent="." unique_id=561419624]
