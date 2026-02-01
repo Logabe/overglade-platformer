@@ -13,3 +13,4 @@ func _increase() -> void:
 	print(breakers)
 	if breakers >= 8:
 		emit_signal("full")
+		#Engine.max_fps = 30

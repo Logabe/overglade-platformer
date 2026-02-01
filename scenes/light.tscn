@@ -28,25 +28,30 @@ omni_range = 11.758
 
 [node name="DirectionalLight3D2" type="OmniLight3D" parent="." unique_id=776265735]
 transform = Transform3D(1, 0, 0, 0, 0.3678811, -0.9298728, 0, 0.9298728, 0.3678811, 0, 0.27445734, -0.25020266)
+visible = false
 light_size = 0.416
 omni_range = 11.758
 
 [node name="DirectionalLight3D3" type="OmniLight3D" parent="." unique_id=1789761816]
 transform = Transform3D(1, 0, 0, 0, -0.25019416, -0.9681958, 0, 0.9681958, -0.25019416, 0, 0.27445734, -0.25020266)
+visible = false
 light_size = 0.416
 omni_range = 11.758
 
 [node name="DirectionalLight3D4" type="OmniLight3D" parent="." unique_id=452246210]
 transform = Transform3D(0.9320395, 0.024330307, -0.36153892, -0.36235678, 0.062581465, -0.9299363, 0, 0.9977434, 0.06714465, 0, 0.27445734, -0.25020266)
+visible = false
 light_size = 0.416
 omni_range = 11.758
 
 [node name="DirectionalLight3D5" type="OmniLight3D" parent="." unique_id=1869410713]
 transform = Transform3D(0.95487505, -0.01994251, 0.29633805, 0.29700807, 0.06411473, -0.9527199, -2.3135933e-09, 0.99774325, 0.067144625, 0, 0.27445734, -0.25020266)
+visible = false
 light_size = 0.416
 omni_range = 11.758
 
 [node name="DirectionalLight3D6" type="OmniLight3D" parent="." unique_id=1363880319]
 transform = Transform3D(-0.9774049, 0.014192744, -0.21089876, -0.21137571, -0.06562754, 0.9751992, -4.9607647e-09, 0.99774325, 0.06714464, 0, 0.27445734, -0.25020266)
+visible = false
 light_size = 0.416
 omni_range = 11.758

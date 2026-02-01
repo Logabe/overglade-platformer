@@ -52,7 +52,7 @@ func _next_dialog():
 	else:
 		_start_dialog()
 	await get_tree().process_frame
-	emit_signal("dialog_stepped", dialogNumber) #Still don't know how to use signas (NOTE)
+	emit_signal("dialog_stepped", dialogNumber) #Still don't know how to use signals (NOTE)
 	print("Emitting", dialogNumber)
 
 func _quit_dialog():

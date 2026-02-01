@@ -32,21 +32,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65885174, 0)
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=274353390]
 target_position = Vector3(0, 0, -2)
 
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D" unique_id=708971188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022657633, 0)
+light_energy = 5.647
+light_volumetric_fog_energy = 0.248
+shadow_enabled = true
+spot_range = 3.597
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1875226543]
 
 [node name="Crosshair" parent="CanvasLayer" unique_id=829913084 instance=ExtResource("2_g2els")]
 crosshairThickness = 4.0
 crosshairSize = 10.0
 crosshairColor = Color(0.9763437, 0.07087935, 0.25851765, 1)
-
-[node name="Dialog" parent="." unique_id=875051722 instance=ExtResource("3_qhqgy")]
-strings = Array[String](["(Skips first line idk) Make sure you write the lines smaller so they dit onto the screen (furture reference)", "*You notice an empty box, an exmpty breaker box...*", "That must be why the power is out, the breakers have been detactched.", "I should find where the breakers are in order to bring power back to this town!"])
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D" unique_id=708971188]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022657633, 0)
-light_energy = 4.485
-spot_range = 3.597
-
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=403659571]
 offset_left = 1.0
@@ -57,3 +55,6 @@ rotation = -1.5707964
 theme_override_styles/fill = SubResource("StyleBoxFlat_g2els")
 value = 100.0
 show_percentage = false
+
+[node name="Dialog" parent="." unique_id=875051722 instance=ExtResource("3_qhqgy")]
+strings = Array[String](["(Skips first line idk) Make sure you write the lines smaller so they dit onto the screen (furture reference)", "*You notice an empty box, an exmpty breaker box...*", "That must be why the power is out, the breakers have been detactched.", "I should find where the breakers are in order to bring power back to this town!"])
