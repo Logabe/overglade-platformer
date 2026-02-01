@@ -71,11 +71,6 @@ func _physics_process(delta: float) -> void:
 	
 signal player_near(breaker)
 signal player_left(breaker)
-<<<<<<< HEAD
-var last_near_breaker
-func _process(delta: float) -> void:
-	var new_near_breaker
-=======
 signal purify_near()
 signal purify_left()
 var last_near_breaker
@@ -83,28 +78,21 @@ var last_near_purify
 func _process(delta: float) -> void:
 	var new_near_breaker
 	var new_near_purify
->>>>>>> 31db2ff (Add local files)
 	if ray_cast_3d.is_colliding():
 		var obj = ray_cast_3d.get_collider()
 		if obj.is_in_group("interactable"):
 			emit_signal("player_near", obj)
 			new_near_breaker = obj
-<<<<<<< HEAD
-=======
 		elif obj.is_in_group("purify"):
 			emit_signal("purify_near", obj)
 			new_near_purify = obj
->>>>>>> 31db2ff (Add local files)
 	if new_near_breaker and !last_near_breaker:
 		emit_signal("player_near", new_near_breaker)
 	if !new_near_breaker and last_near_breaker:
 		emit_signal("player_left", last_near_breaker)
 	last_near_breaker = new_near_breaker
 	
-<<<<<<< HEAD
-	if flash_on:
-		progress_bar.value -= delta * 10
-=======
+
 	if new_near_purify and !last_near_purify:
 		emit_signal("purify_near", new_near_purify)
 	if !new_near_purify and last_near_purify:
@@ -112,7 +100,6 @@ func _process(delta: float) -> void:
 	last_near_purify = new_near_purify
 	if flash_on:
 		progress_bar.value -= delta * 2
->>>>>>> 31db2ff (Add local files)
 		if progress_bar.value <= 0:
 			flash_on = false
 			spot_light_3d.hide()
