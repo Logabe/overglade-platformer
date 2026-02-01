@@ -99,7 +99,7 @@ func _dialog_animation():
 
 func _process(_delta: float) -> void:
 	#parent = parent_script.dialog_identifier # for identifying special cases if need be within dialog script.
-	if first == 1:
+	if first == 1: #change to equals 1 for starting dialog
 		if textLoaded:
 			if parent == 1:
 				_next_dialog()  # Go to next dialogue line
