@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dvfuxt01yk0w4"]
+
+[ext_resource type="Script" path="res://assets/scripts/purify_1.gd" id="1_155pa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trtic"]
+size = Vector3(1.905, 0.25, 0.25)
+
+[node name="Purify_1" type="StaticBody3D" unique_id=1416513801 groups=["purify"]]
+script = ExtResource("1_155pa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2035936484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1057415)
+shape = SubResource("BoxShape3D_trtic")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=270246614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6462804, 0)
+no_depth_test = true
+text = "E to turn on Purifier"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=459334701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.14996338)
+size = Vector3(1, 1, 0.70007324)
+
+[node name="Label3D2" type="Label3D" parent="." unique_id=1162122359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9379852, 0)
+no_depth_test = true
+modulate = Color(1, 0.19197512, 0.018361496, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "No Power!
+Find Breakers first!"
