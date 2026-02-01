@@ -12,6 +12,8 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gee14"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iywne"]
+
 [node name="Node3D" type="Node3D" unique_id=226592304 groups=["player"]]
 
 [node name="GameManager" type="Node" parent="." unique_id=1892699557]
@@ -128,3 +130,16 @@ offset_bottom = 649.0
 theme_override_fonts/font = ExtResource("5_iywne")
 theme_override_font_sizes/font_size = 32
 text = "Air Purifiers: 0/5"
+
+[node name="Keybinds" type="Panel" parent="CanvasLayer" unique_id=1448480320]
+offset_left = 3.0
+offset_top = 489.0
+offset_right = 270.0
+offset_bottom = 646.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iywne")
+
+[node name="Label" type="Label" parent="CanvasLayer/Keybinds" unique_id=274494999]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "C"
