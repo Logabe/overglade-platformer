@@ -1,4 +1,6 @@
 extends Node
+@onready var breaker: Label = $"../CanvasLayer/Breaker"
+@onready var purifiers: Label = $"../CanvasLayer/Purifiers"
 
 var breakers := 0
 # Called when the node enters the scene tree for the first time.
@@ -9,8 +11,11 @@ func _ready() -> void:
 
 signal full()
 func _increase() -> void:
-	breakers += 1
-	print(breakers)
-	if breakers >= 8:
-		emit_signal("full")
-		#Engine.max_fps = 30
+	if breakers <= 8:
+		breakers += 1
+		print(breakers)
+		breaker.text = "Breakers: " + String.num(breakers, 0) + "/8"
+		if breakers >= 8:
+			emit_signal("full")
+			#Engine.max_fps = 30
+		

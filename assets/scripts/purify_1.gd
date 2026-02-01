@@ -1,4 +1,5 @@
 extends StaticBody3D
+@onready var purifiers: Label = $"../../CanvasLayer/Purifiers"
 
 @onready var player: CharacterBody3D = $"/root/Node3D/Player"
 @onready var world_environment: WorldEnvironment = $"../WorldEnvironment"
@@ -25,14 +26,17 @@ func _purify_left(purifier) -> void:
 		label_3d.hide()
 		player_in = false
 		label_3d_2.hide()
-
+var purifiers_count := 0
 func _unhandled_input(event: InputEvent) -> void:
 	if player_in and Input.is_action_just_pressed("pickup") and game_manager.breakers >= 8:
-		self.hide()
-		self.set_physics_process(false)
-		world_environment.environment.volumetric_fog_density = max(world_environment.environment.volumetric_fog_density - 0.019, 0.0)
-		world_environment.environment.fog_density = max(world_environment.environment.fog_density - 0.0095, 0.0)
-		print(world_environment.environment.fog_density)
+		if purifiers_count <= 5:
+			self.hide()
+			self.set_physics_process(false)
+			world_environment.environment.volumetric_fog_density = max(world_environment.environment.volumetric_fog_density - 0.019, 0.0)
+			world_environment.environment.fog_density = max(world_environment.environment.fog_density - 0.0095, 0.0)
+			print(world_environment.environment.fog_density)
+			purifiers_count += 1
+			purifiers.text = "Purifiers: " + String.num(purifiers_count, 0) + "/5"
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

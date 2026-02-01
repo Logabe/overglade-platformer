@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://fs2c6184o5rh" path="res://images/ocean-7238623.jpg" id="2_1l4pg"]
 
 [node name="Fishing_MiniGame" type="CanvasLayer" unique_id=1365578047]
+visible = false
 script = ExtResource("1_vo17g")
 
 [node name="Control" type="Control" parent="." unique_id=561419624]
