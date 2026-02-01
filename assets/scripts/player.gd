@@ -75,5 +75,8 @@ func _process(delta: float) -> void:
 	
 	if flash_on:
 		progress_bar.value -= delta * 10
+		if progress_bar.value <= 0:
+			flash_on = false
+			spot_light_3d.hide()
 	if !flash_on:
 		progress_bar.value += delta/2
