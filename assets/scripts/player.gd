@@ -16,19 +16,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	mouse_captured = true
 	spot_light_3d.hide()
-		# Set horizontal anchors to 0 (Left Side)
-	self.anchor_left = 0
-	self.anchor_right = 0
-	
-	# Set vertical anchors to stretch top-to-bottom (0 to 1)
-	self.anchor_top = 0.3
-	self.anchor_bottom = 0.7
-	
-	# Set offsets to maintain 30px width and zero vertical margin
-	self.offset_left = 0
-	self.offset_right = 30 # This fixes the width to 30px
-	#self.offset_top = 0
-	#self.offset_bottom = 0
+
 func _unhandled_input(event) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
