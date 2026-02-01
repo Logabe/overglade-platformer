@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c1303o2flnqfo"]
+
+[ext_resource type="Texture2D" uid="uid://06hbl7gidh1y" path="res://maps/textures/uhh/PaintedPlaster014_1K-JPG_Color.jpg" id="1_qxh80"]
+
+[resource]
+albedo_texture = ExtResource("1_qxh80")
+metallic_specular = 0.0
+texture_filter = 2
