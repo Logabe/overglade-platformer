@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dn82woaf4uty5"]
 
-[ext_resource type="PackedScene" uid="uid://rttty3uti708" path="res://models/door.blend" id="1_hpvv5"]
 [ext_resource type="Script" uid="uid://cg434dimrysih" path="res://scenes/door.gd" id="1_uvdjg"]
+[ext_resource type="ArrayMesh" uid="uid://d2uecds33a03f" path="res://models/door.obj" id="2_uvdjg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uvdjg"]
 size = Vector3(1, 2, 0.2)
@@ -19,9 +19,8 @@ script = ExtResource("1_uvdjg")
 shape = SubResource("BoxShape3D_uvdjg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=410466532]
+mesh = ExtResource("2_uvdjg")
 skeleton = NodePath("../..")
-
-[node name="door" parent="StaticBody3D" unique_id=1644877553 instance=ExtResource("1_hpvv5")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=564420057]
 shape = SubResource("BoxShape3D_hpvv5")

@@ -10,6 +10,7 @@ var shift_pressed := false
 @onready var camera_3d: Camera3D = $Head/Camera3D
 @onready var ray_cast_3d: RayCast3D = $Head/Camera3D/RayCast3D
 var mouse_captured := false
+@onready var game_manager: Node = $"../GameManager"
 @onready var progress_bar: ProgressBar = $CanvasLayer/ProgressBar
 @onready var spot_light_3d: SpotLight3D = $Head/Camera3D/SpotLight3D
 var flash_on := false
@@ -17,7 +18,6 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	mouse_captured = true
 	spot_light_3d.hide()
-
 func _unhandled_input(event) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
