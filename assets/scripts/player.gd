@@ -1,10 +1,11 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
-
+const SPRINT_SPEED = 10.0
+var shift_pressed := false
 @onready var head: Node3D = $Head
 @onready var camera_3d: Camera3D = $Head/Camera3D
 @onready var ray_cast_3d: RayCast3D = $Head/Camera3D/RayCast3D
@@ -36,6 +37,11 @@ func _unhandled_input(event) -> void:
 		elif !flash_on or flash_on == false:
 			spot_light_3d.show()
 			flash_on = true
+	if event.is_action_pressed("sprint"):
+		SPEED = SPRINT_SPEED
+	if event.is_action_released("sprint"):
+		SPEED = 5.0
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
