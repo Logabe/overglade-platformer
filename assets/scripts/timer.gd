@@ -49,10 +49,24 @@ func _process(delta: float) -> void:
 	minutes = fmod(time, 3600)  / 60
 	minutes_l.text = "%02d:" % minutes
 	seconds_l.text = "%02d." % seconds
-	m_sec.text = "%03d:" % msec
+	m_sec.text = "%03d" % msec
 func stop() -> void:
 	set_process(false)
 	save_score()
 	
 func get_time_formatted() -> String:
 	return "%02d:%02d.%03d" % [minutes, seconds, msec]
+@onready var label_2: Label = $"../Keybinds/Group1/Label2"
+
+@onready var animation_player: AnimationPlayer = $"../Keybinds/AnimationPlayer"
+var opened := false
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("keybind"):
+		if opened:
+			animation_player.play_backwards("open")
+			opened = false
+			label_2.text = "to Open Keybinds"
+		elif opened == false:
+			animation_player.play("open")
+			opened = true
+			label_2.text = "to Close Keybinds"

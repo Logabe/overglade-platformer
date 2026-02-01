@@ -9,15 +9,16 @@ var shift_pressed := false
 @onready var head: Node3D = $Head
 @onready var camera_3d: Camera3D = $Head/Camera3D
 @onready var ray_cast_3d: RayCast3D = $Head/Camera3D/RayCast3D
+@onready var progress_bar: ProgressBar = $CanvasLayer/ProgressBar
 var mouse_captured := false
 @onready var game_manager: Node = $"../GameManager"
-@onready var progress_bar: ProgressBar = $CanvasLayer/ProgressBar
 @onready var spot_light_3d: SpotLight3D = $Head/Camera3D/SpotLight3D
 var flash_on := false
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	mouse_captured = true
 	spot_light_3d.hide()
+	progress_bar.hide()
 func _unhandled_input(event) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -94,8 +95,13 @@ func _process(delta: float) -> void:
 	last_near_purify = new_near_purify
 	if flash_on:
 		progress_bar.value -= delta * 2
+		progress_bar.show()
 		if progress_bar.value <= 0:
 			flash_on = false
 			spot_light_3d.hide()
 	if !flash_on:
 		progress_bar.value += delta/2
+		if progress_bar.value <= 0:
+			progress_bar.show()
+			await get_tree().create_timer(3).timeout
+			progress_bar.hide()

@@ -14,6 +14,194 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iywne"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iywne"]
+bg_color = Color(0.9565733, 0.41161007, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_p57ef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Group1/Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 609)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Group1/Label2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(33, 609)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Group2/Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 656)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Group2/Label2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 683)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Group2/Label3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 712)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Group2/Label4:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 743)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Group2/Label5:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 770)]
+}
+
+[sub_resource type="Animation" id="Animation_u5sy4"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Group1/Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 609), Vector2(1, 451)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Group1/Label2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(33, 609), Vector2(33, 451)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Group2/Label:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, 656), Vector2(3, 499)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Group2/Label2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, 683), Vector2(3, 526)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Group2/Label3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, 712), Vector2(3, 555)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Group2/Label4:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, 743), Vector2(3, 586)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Group2/Label5:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, 770), Vector2(3, 613)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gee14"]
+_data = {
+&"RESET": SubResource("Animation_p57ef"),
+&"open": SubResource("Animation_u5sy4")
+}
+
 [node name="Node3D" type="Node3D" unique_id=226592304 groups=["player"]]
 
 [node name="GameManager" type="Node" parent="." unique_id=1892699557]
@@ -132,14 +320,81 @@ theme_override_font_sizes/font_size = 32
 text = "Air Purifiers: 0/5"
 
 [node name="Keybinds" type="Panel" parent="CanvasLayer" unique_id=1448480320]
-offset_left = 3.0
-offset_top = 489.0
-offset_right = 270.0
-offset_bottom = 646.0
+offset_left = -3.0
+offset_top = 497.0
+offset_right = 434.0
+offset_bottom = 815.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_iywne")
 
-[node name="Label" type="Label" parent="CanvasLayer/Keybinds" unique_id=274494999]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Group1" type="Node" parent="CanvasLayer/Keybinds" unique_id=1735123462]
+
+[node name="Label" type="Label" parent="CanvasLayer/Keybinds/Group1" unique_id=274494999]
+offset_left = 1.0
+offset_top = 609.0
+offset_right = 28.0
+offset_bottom = 647.0001
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_iywne")
 text = "C"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Keybinds/Group1" unique_id=796202953]
+offset_left = 33.0
+offset_top = 609.0
+offset_right = 303.0
+offset_bottom = 647.0001
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 32
+text = "to Open Keybinds"
+horizontal_alignment = 1
+
+[node name="Group2" type="Node" parent="CanvasLayer/Keybinds" unique_id=1125008347]
+
+[node name="Label" type="Label" parent="CanvasLayer/Keybinds/Group2" unique_id=393326135]
+offset_left = 3.0
+offset_top = 656.0
+offset_right = 295.0
+offset_bottom = 686.0
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 25
+text = "E to interact with items."
+
+[node name="Label2" type="Label" parent="CanvasLayer/Keybinds/Group2" unique_id=542104867]
+offset_left = 3.0
+offset_top = 683.0
+offset_right = 295.0
+offset_bottom = 713.0
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 25
+text = "Q to turn on flashlight"
+
+[node name="Label3" type="Label" parent="CanvasLayer/Keybinds/Group2" unique_id=1368811605]
+offset_left = 3.0
+offset_top = 712.0
+offset_right = 416.0
+offset_bottom = 742.0
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 25
+text = "WASD / Arrow keys for movement"
+
+[node name="Label4" type="Label" parent="CanvasLayer/Keybinds/Group2" unique_id=1659626416]
+offset_left = 3.0
+offset_top = 743.0
+offset_right = 416.0
+offset_bottom = 773.0
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 25
+text = "Shift to sprint"
+
+[node name="Label5" type="Label" parent="CanvasLayer/Keybinds/Group2" unique_id=444597699]
+offset_left = 3.0
+offset_top = 770.0
+offset_right = 416.0
+offset_bottom = 800.0
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 25
+text = "Space to jump"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Keybinds" unique_id=1906069643]
+libraries/ = SubResource("AnimationLibrary_gee14")

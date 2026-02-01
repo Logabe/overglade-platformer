@@ -33,4 +33,5 @@ theme_override_constants/margin_bottom = 10
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer" unique_id=1532526303]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 10
 text = "test"
