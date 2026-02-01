@@ -1,10 +1,10 @@
 extends StaticBody3D
 
-@onready var player: CharacterBody3D = $"../Player"
+@onready var player: CharacterBody3D = $"/root/Node3D/Player"
 @onready var world_environment: WorldEnvironment = $"../WorldEnvironment"
 @onready var label_3d: Label3D = $Label3D
 @onready var label_3d_2: Label3D = $Label3D2
-@onready var game_manager: Node = $"../GameManager"
+@onready var game_manager: Node = $"/root/Node3D/GameManager"
 var player_in := false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

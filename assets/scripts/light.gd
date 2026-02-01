@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@onready var game_manager: Node = $"../GameManager"
+@onready var game_manager: Node = $"/root/Node3D/GameManager"
 @onready var light_2: MeshInstance3D = $Light2
 @onready var directional_light_3d: OmniLight3D = $DirectionalLight3D
 @onready var directional_light_3d_2: OmniLight3D = $DirectionalLight3D2
