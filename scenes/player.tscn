@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://fh2fxwiqk5ng" path="res://assets/scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://iwlpamd20oko" path="res://addons/customizableCrosshair/crosshair/crosshair.tscn" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://dlgyyf4gif1e7" path="res://scenes/dialog.tscn" id="3_qhqgy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g2els"]
 
@@ -34,3 +35,6 @@ target_position = Vector3(0, 0, -2)
 crosshairThickness = 4.0
 crosshairSize = 10.0
 crosshairColor = Color(0.9763437, 0.07087935, 0.25851765, 1)
+
+[node name="Dialog" parent="." unique_id=875051722 instance=ExtResource("3_qhqgy")]
+strings = Array[String](["(Skips first line idk) Make sure you write the lines smaller so they dit onto the screen (furture reference)", "*You notice an empty box, actually, an exmpty breaker box...*", "That must be why the power is out, the breakers have been detactched.", "I should find where the breakers are in order to bring power back to this town!"])
