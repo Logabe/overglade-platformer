@@ -6,7 +6,7 @@ var fishing_state := 0
 var override := 0.0
 var finished: bool = false
 func _ready() -> void:
-	pass
+	$Label3D.hide()
 
 
 
@@ -42,7 +42,9 @@ func wait_time(seconds: float) -> void:
 
 func _on_area_3d_body_entered(_body: Node3D) -> void:
 	entered = 1
+	$Label3D.show()
 
 
 func _on_area_3d_body_exited(_body: Node3D) -> void:
 	entered = 0
+	$Label3D.hide()
