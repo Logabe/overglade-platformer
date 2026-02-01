@@ -2,7 +2,7 @@ extends CSGBox3D
 
 @onready var label_3d: Label3D = $Label3D
 @onready var area_3d: Area3D = $Area3D
-@onready var player: CharacterBody3D = $"../Player"
+@onready var player: CharacterBody3D = $"../../Player"
 @onready var collision_shape_3d: CollisionShape3D = $Area3D/CollisionShape3D
 var player_inside := false
 # Called when the node enters the scene tree for the first time.
