@@ -1,5 +1,9 @@
 extends Control
+@export var light_path:NodePath
+@onready var light_script = get_node(light_path)
 var play = 0
+var first := 1
+var lights_on: bool = false
 @onready var button: Button = $Button
 var musica = 0
 func _ready() -> void:
@@ -11,6 +15,16 @@ func _process(_delta: float) -> void:
 	if play == 0 and musica == 0:
 		$menu_music.play()
 		musica = 1
+	lights_on = light_script.lights_on
+	if play == 1 and first == 1:
+		first = 0
+		$dark_music.play()
+	if lights_on and first == 0:
+		first = 2
+		$dark_music.stop()
+		$main_music.play()
+	if first == 2 and not $main_music.playing:
+		$main_music.play()
 func _on_button_pressed() -> void:
 	#print("button works")
 	play = 1

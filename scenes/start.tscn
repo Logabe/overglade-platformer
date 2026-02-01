@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bmk4b2wy8bnf4" path="res://assets/scripts/start.gd" id="1_u80x2"]
 [ext_resource type="AudioStream" uid="uid://b22irvh6mhel0" path="res://assets/music/menu_music.mp3" id="2_bodal"]
 [ext_resource type="Texture2D" uid="uid://yv6b0pjdtjvm" path="res://images/menu_base.png" id="2_kdmts"]
+[ext_resource type="AudioStream" uid="uid://bbdqbxrc48fix" path="res://assets/music/dark_music_lights_off.mp3" id="4_0auqf"]
+[ext_resource type="AudioStream" uid="uid://lypvsmbxenc3" path="res://assets/music/main_music.mp3" id="5_y16t7"]
 
 [node name="start" type="Control" unique_id=1575968877]
 layout_mode = 3
@@ -24,5 +26,11 @@ offset_bottom = 405.0
 theme_override_font_sizes/font_size = 38
 text = "START"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1595965064]
+[node name="menu_music" type="AudioStreamPlayer" parent="." unique_id=1595965064]
 stream = ExtResource("2_bodal")
+
+[node name="dark_music" type="AudioStreamPlayer" parent="." unique_id=1213340656]
+stream = ExtResource("4_0auqf")
+
+[node name="main_music" type="AudioStreamPlayer" parent="." unique_id=1412719177]
+stream = ExtResource("5_y16t7")

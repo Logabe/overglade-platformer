@@ -1,4 +1,5 @@
 extends StaticBody3D
+var lights_on: bool = false
 
 @onready var game_manager: Node = $"/root/Node3D/GameManager"
 @onready var light_2: MeshInstance3D = $Light2
@@ -26,6 +27,7 @@ func _process(_delta: float) -> void:
 
 
 func _turn_on() -> void:
+	lights_on = true
 	directional_light_3d.show()
 	directional_light_3d_2.show()
 	directional_light_3d_3.show()
