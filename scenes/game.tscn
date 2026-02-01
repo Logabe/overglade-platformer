@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c77abaobaoyqx" path="res://state.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cxcsp1rxdt2d2" path="res://scenes/level.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://dchuife8h50s0" path="res://assets/scripts/timer.gd" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://db0td1stm7eap" path="res://scenes/player.tscn" id="6_u5sy4"]
 
 [node name="Node3D" type="Node3D" unique_id=226592304 groups=["player"]]
@@ -13,3 +14,40 @@ script = ExtResource("1_lbhrr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.715928, 0.582371, 0.031696796)
 
 [node name="Hotel" parent="." unique_id=1238186494 instance=ExtResource("3_lnu2h")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=618402128]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=657167284]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -210.0
+offset_bottom = 68.0
+grow_horizontal = 0
+script = ExtResource("4_lbhrr")
+
+[node name="Minutes" type="Label" parent="CanvasLayer/Panel" unique_id=938029307]
+layout_mode = 0
+offset_right = 61.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 40
+text = "00:"
+horizontal_alignment = 2
+
+[node name="Seconds" type="Label" parent="CanvasLayer/Panel" unique_id=1905149691]
+layout_mode = 0
+offset_left = 72.0
+offset_right = 133.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 40
+text = "00."
+horizontal_alignment = 2
+
+[node name="MSec" type="Label" parent="CanvasLayer/Panel" unique_id=1258734006]
+layout_mode = 0
+offset_left = 149.0
+offset_right = 210.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 40
+text = "00"
+horizontal_alignment = 2

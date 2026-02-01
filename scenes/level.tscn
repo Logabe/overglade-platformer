@@ -11,7 +11,7 @@
 [ext_resource type="Shader" uid="uid://c3d638behmwd8" path="res://assets/shaders/water.gdshader" id="9_8c41q"]
 [ext_resource type="PackedScene" uid="uid://bewqimlaearh8" path="res://scenes/fishing_rod_trigger.tscn" id="10_olg7q"]
 [ext_resource type="PackedScene" uid="uid://b2jnf3yksrkku" path="res://scenes/fishing_mini_game.tscn" id="10_t1rx8"]
-[ext_resource type="PackedScene" uid="uid://cywbdbjjjrdru" path="res://scenes/bigdoor.tscn" id="12_8iemx"]
+[ext_resource type="PackedScene" path="res://scenes/bigdoor.tscn" id="12_8iemx"]
 
 [sub_resource type="Environment" id="Environment_kvpfn"]
 background_energy_multiplier = 0.5
@@ -240,6 +240,7 @@ trigger_node_path = NodePath("../fishing_rod_trigger")
 
 [node name="fishing_rod_trigger" parent="." unique_id=2030260800 instance=ExtResource("10_olg7q")]
 transform = Transform3D(0.2, 0, 0, 0, 0.06, 0, 0, 0, 0.2, 19.561165, 0.18202293, -8.663699)
+rod_path = NodePath("../Fishing_MiniGame")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=539673283]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.484419, 0, -2.2098923)

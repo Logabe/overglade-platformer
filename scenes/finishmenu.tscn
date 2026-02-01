@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dskdxiqelpbfd"]
+
+[ext_resource type="Texture2D" uid="uid://cmx5e4hvc4hdc" path="res://thx.png" id="1_xw7tf"]
+
+[node name="Control" type="Control" unique_id=1691599478]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Thx" type="Sprite2D" parent="." unique_id=652498581]
+position = Vector2(583, 328)
+scale = Vector2(0.6092593, 0.60925925)
+texture = ExtResource("1_xw7tf")
