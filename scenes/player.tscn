@@ -37,4 +37,4 @@ crosshairSize = 10.0
 crosshairColor = Color(0.9763437, 0.07087935, 0.25851765, 1)
 
 [node name="Dialog" parent="." unique_id=875051722 instance=ExtResource("3_qhqgy")]
-strings = Array[String](["(Skips first line idk) Make sure you write the lines smaller so they dit onto the screen (furture reference)", "*You notice an empty box, actually, an exmpty breaker box...*", "That must be why the power is out, the breakers have been detactched.", "I should find where the breakers are in order to bring power back to this town!"])
+strings = Array[String](["(Skips first line idk) Make sure you write the lines smaller so they dit onto the screen (furture reference)", "*You notice an empty box, an exmpty breaker box...*", "That must be why the power is out, the breakers have been detactched.", "I should find where the breakers are in order to bring power back to this town!"])

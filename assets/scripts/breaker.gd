@@ -16,7 +16,7 @@ func _ready() -> void:
 
 signal collect()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player_inside and Input.is_action_just_pressed("pickup"):
 		self.hide()
 		self.set_physics_process(false)
