@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://vg1gn6yl7hf5"]
+
+[ext_resource type="Texture2D" uid="uid://crbwgdiypydm" path="res://models/fishing_rod_0.png" id="1_hu502"]
+[ext_resource type="Texture2D" uid="uid://btdjok0umg0pd" path="res://models/fishing_rod_1.png" id="2_fmotp"]
+
+[resource]
+resource_name = "aiAmbientOcclusion1SG"
+cull_mode = 2
+albedo_texture = ExtResource("1_hu502")
+metallic = 1.0
+metallic_texture = ExtResource("2_fmotp")
+metallic_texture_channel = 2
+roughness = 0.91373605
+roughness_texture = ExtResource("2_fmotp")
+roughness_texture_channel = 1

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b2jnf3yksrkku"]
+
+[ext_resource type="Script" uid="uid://lm4c5tlhdcbj" path="res://assets/scripts/fishing_mini_game.gd" id="1_vo17g"]
+[ext_resource type="Texture2D" uid="uid://fs2c6184o5rh" path="res://images/ocean-7238623.jpg" id="2_1l4pg"]
+
+[node name="Fishing_MiniGame" type="CanvasLayer" unique_id=1365578047]
+script = ExtResource("1_vo17g")
+
+[node name="Control" type="Control" parent="." unique_id=561419624]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=1664895678]
+texture = ExtResource("2_1l4pg")
+
+[node name="TargetCircle" type="TextureRect" parent="Control" unique_id=407192595]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishIcon" type="TextureRect" parent="Control" unique_id=994618613]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StatusLabel" type="Label" parent="Control" unique_id=1697023244]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

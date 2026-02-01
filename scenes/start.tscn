@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://boqjj8ugpr80i"]
+
+[ext_resource type="Script" uid="uid://bmk4b2wy8bnf4" path="res://assets/scripts/start.gd" id="1_u80x2"]
+[ext_resource type="AudioStream" uid="uid://b22irvh6mhel0" path="res://assets/music/menu_music.mp3" id="2_bodal"]
+[ext_resource type="Texture2D" uid="uid://yv6b0pjdtjvm" path="res://images/menu_base.png" id="2_kdmts"]
+
+[node name="start" type="Control" unique_id=1575968877]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_u80x2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=978726736]
+position = Vector2(400, 300)
+texture = ExtResource("2_kdmts")
+
+[node name="Button" type="Button" parent="." unique_id=2131030792]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 318.0
+offset_right = 488.0
+offset_bottom = 405.0
+theme_override_font_sizes/font_size = 38
+text = "START"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1595965064]
+stream = ExtResource("2_bodal")
