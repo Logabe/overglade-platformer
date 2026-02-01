@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://db0td1stm7eap"]
 
-[ext_resource type="Script" uid="uid://fh2fxwiqk5ng" path="res://assets/scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bcjtg14iin04l" path="res://assets/scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://iwlpamd20oko" path="res://addons/customizableCrosshair/crosshair/crosshair.tscn" id="2_g2els"]
 [ext_resource type="PackedScene" uid="uid://dlgyyf4gif1e7" path="res://scenes/dialog.tscn" id="3_qhqgy"]
 
