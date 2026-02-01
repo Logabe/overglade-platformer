@@ -3,8 +3,21 @@
 [ext_resource type="Script" uid="uid://b8215c1ko0vi7" path="res://assets/scripts/fishing_rod_trigger.gd" id="1_sdqxq"]
 [ext_resource type="PackedScene" uid="uid://iuokhfguofxe" path="res://models/fishing_rod.glb" id="2_6rstq"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_sdqxq"]
+radius = 14.080262
+
 [node name="fishing_rod_trigger" type="Node3D" unique_id=2030260800]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_sdqxq")
 
 [node name="ggggggg" parent="." unique_id=1895996243 instance=ExtResource("2_6rstq")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.003769, 1.1920929e-07, -3.8721652)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.07254481, 1.1920929e-07, 0.047644615)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2106656229]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1926461460]
+transform = Transform3D(0.97697115, 0.21337143, 0, -0.21337143, 0.97697115, 0, 0, 0, 1, 0.34571993, 0.15869546, -1.2397546)
+shape = SubResource("SphereShape3D_sdqxq")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
