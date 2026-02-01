@@ -104,6 +104,7 @@ func end_minigame(success: bool):
 		if trigger_node: trigger_node.set("fishing_state", 2)
 		await get_tree().create_timer(0.8).timeout
 		status_label.text = "You depleted the food source!"
+		is_ending = true
 	else:
 		status_label.text = "LOST IT... ):"
 		if trigger_node: trigger_node.set("fishing_state", 0)
