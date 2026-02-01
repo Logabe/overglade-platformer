@@ -1,6 +1,94 @@
 [gd_scene format=3 uid="uid://dskdxiqelpbfd"]
 
+[ext_resource type="Script" uid="uid://gtyf5g4gacu8" path="res://assets/scripts/finishmenu.gd" id="1_ebe6d"]
 [ext_resource type="Texture2D" uid="uid://cmx5e4hvc4hdc" path="res://thx.png" id="1_xw7tf"]
+[ext_resource type="FontFile" uid="uid://bjmbeuhivu47f" path="res://Genty-Sans-Regular.ttf" id="2_74i5y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebe6d"]
+bg_color = Color(0.92315155, 0, 0.2563971, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Animation" id="Animation_oa60t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dhe8c"]
+resource_name = "hover1"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_phqao"]
+_data = {
+&"RESET": SubResource("Animation_oa60t"),
+&"hover1": SubResource("Animation_dhe8c")
+}
+
+[sub_resource type="Animation" id="Animation_oag66"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_35jot"]
+resource_name = "hover2"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hko8p"]
+_data = {
+&"RESET": SubResource("Animation_oag66"),
+&"hover2": SubResource("Animation_35jot")
+}
 
 [node name="Control" type="Control" unique_id=1691599478]
 layout_mode = 3
@@ -9,8 +97,47 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ebe6d")
 
 [node name="Thx" type="Sprite2D" parent="." unique_id=652498581]
 position = Vector2(583, 328)
 scale = Vector2(0.6092593, 0.60925925)
 texture = ExtResource("1_xw7tf")
+
+[node name="Button" type="Button" parent="." unique_id=1674187590]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 492.0
+offset_right = 532.0
+offset_bottom = 561.0
+pivot_offset = Vector2(135, 34)
+theme_override_fonts/font = ExtResource("2_74i5y")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ebe6d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ebe6d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ebe6d")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ebe6d")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ebe6d")
+text = "YAYY!!!!!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button" unique_id=1036436962]
+libraries/ = SubResource("AnimationLibrary_phqao")
+
+[node name="Button2" type="Button" parent="." unique_id=312992303]
+layout_mode = 0
+offset_left = 647.0
+offset_top = 492.0
+offset_right = 918.0
+offset_bottom = 561.0
+pivot_offset = Vector2(135, 34)
+theme_override_fonts/font = ExtResource("2_74i5y")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_ebe6d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ebe6d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ebe6d")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ebe6d")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ebe6d")
+text = "Try Again?"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Button2" unique_id=1231934528]
+libraries/ = SubResource("AnimationLibrary_hko8p")
