@@ -1,20 +1,31 @@
 extends Node3D
+@export var rod_path:NodePath
+@onready var rod = get_node(rod_path)
 var entered := 0
 var fishing_state := 0
-# Called when the node enters the scene tree for the first time.
+var override := 0.0
+var finished: bool = false
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
 	pass
+
+
+
+func _process(_delta: float) -> void:
+	finished = rod.finished
+	if finished:
+		self.hide()
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interation") and entered == 1:
 		fishing_state = 1
-		await wait_time(.2)
-		fishing_state = 0
+		
+	
+
+
+func _end_game():
+	while entered == 1:
+		pass
+	fishing_state = 0
 
 
 func wait_time(seconds: float) -> void:

@@ -1,109 +1,101 @@
 extends CanvasLayer
-
-# --- Configuration ---
-@export var trigger_node_path: NodePath # Path to the 3D node with the variable
-@export var success_margin: float = 40.0 # How close the fish must be to the center
+@export var trigger_node_path: NodePath 
+@export var success_margin: float = 40.0 
 @export var min_fish_speed: float = 250.0
 @export var max_fish_speed: float = 550.0
 @export var min_wait_time: float = 1.0
 @export var max_wait_time: float = 4.0
+
 var current_fish_speed: float = 0.0
+var is_active: bool = false
+var direction_to_target: Vector2 = Vector2.ZERO
+var finished: bool = false
 
-var is_active = false
-var fish_caught = false
-@onready var trigger_node = get_node(trigger_node_path)
-var finished := 0
-
+@onready var trigger_node = get_node_or_null(trigger_node_path)
+@onready var ui_container = $Control
 @onready var target_circle = $Control/TargetCircle
 @onready var fish_icon = $Control/FishIcon
 @onready var status_label = $Control/StatusLabel
 
 func _ready():
-	# Hide the UI until the game starts
-	randomize()
-	self.visible = false
-	trigger_node = get_node(trigger_node_path)
+	hide()
+	setup_anchors()
 	reset_minigame()
-	$Control/Sprite2D.modulate = Color(0.5, 0.5, 0.5, 1.0)
 
 func _process(delta):
-	# 1. Watch for the trigger variable (change "fishing_state" to your variable name)
-	if trigger_node and trigger_node.fishing_state == 1 and not is_active:
-		start_minigame()
-
+	if trigger_node and trigger_node.get("fishing_state") == 1:
+		if not is_active:
+			start_minigame()
+	
 	if is_active:
 		move_fish(delta)
 		check_input()
+func setup_anchors():
+	ui_container.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	target_circle.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
+	status_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP)
+	status_label.position.y += 50 
 
 func start_minigame():
-	if finished != 1:
-		is_active = true
-		self.visible = true
-		status_label.text = "Waiting for a bite..."
-		fish_icon.modulate.a = 0 # Hide fish while waiting
-		
-		# Randomize the "wait for splash" time (Minecraft style)
-		var wait_time2 = randf_range(min_wait_time, max_wait_time)
-		await get_tree().create_timer(wait_time2).timeout
-		
-		if not is_active: return # Safety check if player cancelled
-		
-		# Randomize Speed and Appearance
-		status_label.text = "NIBBLE!"
-		fish_icon.modulate.a = 1 
-		current_fish_speed = randf_range(min_fish_speed, max_fish_speed)
-		
-		# Randomize Side: 50% chance left or right
-		var side_multiplier = 1 if randf() > 0.5 else -1
-		fish_icon.position = Vector2(target_circle.position.x + (400 * side_multiplier), target_circle.position.y)
+	is_active = true
+	show()
+	status_label.text = "Waiting for a bite..."
+	fish_icon.hide()
+	
+	await get_tree().create_timer(randf_range(min_wait_time, max_wait_time)).timeout
+	
+	if not is_active: return 
+
+	status_label.text = "NIBBLE!"
+	fish_icon.show()
+	current_fish_speed = randf_range(min_fish_speed, max_fish_speed)
+	
+	var random_angle = randf_range(0, TAU)
+	var spawn_distance = get_viewport().get_visible_rect().size.x / 1.5
+	offset = Vector2.RIGHT.rotated(random_angle) * spawn_distance
+	
+	fish_icon.global_position = target_circle.global_position + offset
+	direction_to_target = (target_circle.global_position - fish_icon.global_position).normalized()
+	fish_icon.rotation = direction_to_target.angle()
 
 func move_fish(delta):
-	var direction = (target_circle.position - fish_icon.position).normalized()
-	fish_icon.position += direction * current_fish_speed * delta # Uses the random speed
+	if not fish_icon.visible: return
 	
-	# Lose if the fish moves too far past the center
-	if fish_icon.position.distance_to(target_circle.position) > 600:
+	fish_icon.global_position += direction_to_target * current_fish_speed * delta
+	
+	var distance = fish_icon.global_position.distance_to(target_circle.global_position)
+	var dot_product = direction_to_target.dot((target_circle.global_position - fish_icon.global_position).normalized())
+	
+	if dot_product < 0 and distance > success_margin * 2:
 		end_minigame(false)
 
-
 func check_input():
-	if Input.is_action_just_pressed("ui_accept"): # "ui_accept" is Space by default
-		var distance = fish_icon.position.distance_to(target_circle.position)
-		
+	if Input.is_action_just_pressed("ui_accept"):
+		var distance = fish_icon.global_position.distance_to(target_circle.global_position)
 		if distance <= success_margin:
 			end_minigame(true)
 		else:
 			end_minigame(false)
 
 func end_minigame(success: bool):
+	if not is_active: return
 	is_active = false
+	
 	if success:
+		finished = true
 		status_label.text = "CATCH!"
-		#put wait logic and stuff
-		finished = 1
-		await wait_time(.8) #Yay sound?!
-		status_label.text = "You have now depleted the otter's only food source!"
+		if trigger_node: trigger_node.set("fishing_state", 2)
+		await get_tree().create_timer(0.8).timeout
+		status_label.text = "You depleted the food source!"
+		#self.hide()
 	else:
 		status_label.text = "LOST IT... ):"
+		if trigger_node: trigger_node.set("fishing_state", 0)
 
-	# Tell the 3D node to stop fishing (reset variable)
-	if trigger_node:
-		trigger_node.fishing_state = 0
-	
-	# Wait 1 second so player sees the result, then hide
-	await wait_time(1)
-	self.visible = false
+	await get_tree().create_timer(1.5).timeout
+	hide()
 	reset_minigame()
 
 func reset_minigame():
-	fish_icon.position = Vector2(-1000, -1000) # Move off-screen
-
-
-func wait_time(seconds: float) -> void:
-	var timer = Timer.new()
-	timer.wait_time = seconds
-	timer.one_shot = true
-	add_child(timer)
-	timer.start()
-	await timer.timeout
-	timer.queue_free()
+	fish_icon.hide()
+	fish_icon.position = Vector2(-2000, -2000)
