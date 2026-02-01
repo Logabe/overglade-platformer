@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bewqimlaearh8"]
+
+[ext_resource type="Script" uid="uid://b8215c1ko0vi7" path="res://assets/scripts/fishing_rod_trigger.gd" id="1_sdqxq"]
+[ext_resource type="PackedScene" uid="uid://iuokhfguofxe" path="res://models/fishing_rod.glb" id="2_6rstq"]
+
+[node name="fishing_rod_trigger" type="Node3D" unique_id=2030260800]
+script = ExtResource("1_sdqxq")
+
+[node name="ggggggg" parent="." unique_id=1895996243 instance=ExtResource("2_6rstq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.003769, 1.1920929e-07, -3.8721652)

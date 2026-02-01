@@ -36,25 +36,26 @@ func _process(delta):
 		check_input()
 
 func start_minigame():
-	is_active = true
-	self.visible = true
-	status_label.text = "Waiting for a bite..."
-	fish_icon.modulate.a = 0 # Hide fish while waiting
-	
-	# Randomize the "wait for splash" time (Minecraft style)
-	var wait_time2 = randf_range(min_wait_time, max_wait_time)
-	await get_tree().create_timer(wait_time2).timeout
-	
-	if not is_active: return # Safety check if player cancelled
-	
-	# Randomize Speed and Appearance
-	status_label.text = "NIBBLE!"
-	fish_icon.modulate.a = 1 
-	current_fish_speed = randf_range(min_fish_speed, max_fish_speed)
-	
-	# Randomize Side: 50% chance left or right
-	var side_multiplier = 1 if randf() > 0.5 else -1
-	fish_icon.position = Vector2(target_circle.position.x + (400 * side_multiplier), target_circle.position.y)
+	if finished != 1:
+		is_active = true
+		self.visible = true
+		status_label.text = "Waiting for a bite..."
+		fish_icon.modulate.a = 0 # Hide fish while waiting
+		
+		# Randomize the "wait for splash" time (Minecraft style)
+		var wait_time2 = randf_range(min_wait_time, max_wait_time)
+		await get_tree().create_timer(wait_time2).timeout
+		
+		if not is_active: return # Safety check if player cancelled
+		
+		# Randomize Speed and Appearance
+		status_label.text = "NIBBLE!"
+		fish_icon.modulate.a = 1 
+		current_fish_speed = randf_range(min_fish_speed, max_fish_speed)
+		
+		# Randomize Side: 50% chance left or right
+		var side_multiplier = 1 if randf() > 0.5 else -1
+		fish_icon.position = Vector2(target_circle.position.x + (400 * side_multiplier), target_circle.position.y)
 
 func move_fish(delta):
 	var direction = (target_circle.position - fish_icon.position).normalized()
