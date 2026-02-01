@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ci7e058ifis56"]
+
+[ext_resource type="Texture2D" uid="uid://cxemcwjid1d70" path="res://models/textures/column_albedo.png" id="1_1hfyr"]
+[ext_resource type="Texture2D" uid="uid://ls7roxao30i1" path="res://models/textures/column_AO.png" id="2_q3oaj"]
+[ext_resource type="Texture2D" uid="uid://dnw570m6dxxm3" path="res://models/textures/column_normal.png" id="3_2putn"]
+[ext_resource type="Texture2D" uid="uid://b4nh83jsd1t8p" path="res://models/textures/column_roughness.png" id="4_83ody"]
+
+[resource]
+albedo_texture = ExtResource("1_1hfyr")
+roughness_texture = ExtResource("4_83ody")
+normal_enabled = true
+normal_texture = ExtResource("3_2putn")
+ao_enabled = true
+ao_texture = ExtResource("2_q3oaj")
