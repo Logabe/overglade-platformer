@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cxcsp1rxdt2d2" path="res://scenes/level.tscn" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://dchuife8h50s0" path="res://assets/scripts/timer.gd" id="4_lbhrr"]
 [ext_resource type="FontFile" uid="uid://bjmbeuhivu47f" path="res://Genty-Sans-Regular.ttf" id="5_iywne"]
+[ext_resource type="AudioStream" uid="uid://ca5lw770plilr" path="res://Midnight In-Between.mp3" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://db0td1stm7eap" path="res://scenes/player.tscn" id="6_u5sy4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p57ef"]
@@ -398,3 +399,7 @@ text = "Space to jump"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Keybinds" unique_id=1906069643]
 libraries/ = SubResource("AnimationLibrary_gee14")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=162893034]
+stream = ExtResource("6_p57ef")
+autoplay = true
