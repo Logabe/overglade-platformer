@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dnbk5pcoa4h8"]
 
+[ext_resource type="Script" uid="uid://cshq10y1o81wa" path="res://assets/scripts/mainmenu.gd" id="1_3vvtq"]
 [ext_resource type="Texture2D" uid="uid://c032mef0uuh3t" path="res://untitled hotel.png" id="1_r3g3c"]
 [ext_resource type="FontFile" uid="uid://bjmbeuhivu47f" path="res://Genty-Sans-Regular.ttf" id="2_3vvtq"]
 [ext_resource type="Script" uid="uid://cjnf00uyou5hl" path="res://assets/scripts/button.gd" id="3_s5g8n"]
@@ -60,6 +61,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3vvtq")
 
 [node name="UntitledHotel" type="Sprite2D" parent="." unique_id=1480086317]
 position = Vector2(578.44446, 334)

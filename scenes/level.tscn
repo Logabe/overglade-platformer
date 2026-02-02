@@ -11,7 +11,7 @@
 [ext_resource type="Shader" uid="uid://c3d638behmwd8" path="res://assets/shaders/water.gdshader" id="9_8c41q"]
 [ext_resource type="PackedScene" uid="uid://bewqimlaearh8" path="res://scenes/fishing_rod_trigger.tscn" id="10_olg7q"]
 [ext_resource type="PackedScene" uid="uid://b2jnf3yksrkku" path="res://scenes/fishing_mini_game.tscn" id="10_t1rx8"]
-[ext_resource type="PackedScene" path="res://scenes/bigdoor.tscn" id="12_8iemx"]
+[ext_resource type="PackedScene" uid="uid://cywbdbjjjrdru" path="res://scenes/bigdoor.tscn" id="12_8iemx"]
 
 [sub_resource type="Environment" id="Environment_kvpfn"]
 background_energy_multiplier = 0.5
